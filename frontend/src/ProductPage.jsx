@@ -13,7 +13,7 @@ export default function ProductPage() {
   }, []);
 
   const fetchProducts = async () => {
-    const res = await API.get("http://localhost:5001/products");
+    const res = await API.get("https://dc-li58.vercel.app/products");
     setProducts(res.data);
   };
 
@@ -21,7 +21,7 @@ export default function ProductPage() {
   const addToCart = async (id) => {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    await API.post("http://localhost:5001/cart/add", {
+    await API.post("https://dc-li58.vercel.app/cart/add", {
       user_id: user.user_id,
       product_id: id,
       quantity: 1

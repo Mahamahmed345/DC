@@ -21,7 +21,7 @@ export default function CartPage() {
     const user = JSON.parse(localStorage.getItem("user"));
 
     const res = await API.get(
-      `http://localhost:5001/cart/${user.user_id}`
+      `https://dc-li58.vercel.app/cart/${user.user_id}`
     );
 
     setCart(res.data);
@@ -39,7 +39,7 @@ export default function CartPage() {
 
     if (newQty < 1) return;
 
-    await API.put("http://localhost:5001/cart/update", {
+    await API.put("https://dc-li58.vercel.app/cart/update", {
       user_id: item.user_id,
       product_id: item.product_id,
       quantity: newQty
@@ -50,7 +50,7 @@ export default function CartPage() {
 
   // ❌ REMOVE ITEM (IMPORTANT: using product_id + user_id)
   const removeItem = async (item) => {
-    await API.delete("http://localhost:5001/cart/remove", {
+    await API.delete("https://dc-li58.vercel.app/cart/remove", {
       data: {
         user_id: item.user_id,
         product_id: item.product_id
@@ -80,7 +80,7 @@ export default function CartPage() {
     );
 
     await API.delete(
-      `http://localhost:5001/cart/clear/${user.user_id}`
+      `https://dc-li58.vercel.app/cart/clear/${user.user_id}`
     );
 
     setCart([]);
