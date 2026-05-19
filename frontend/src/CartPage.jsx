@@ -69,7 +69,7 @@ export default function CartPage() {
     );
 
     const payment = await API.post(
-      "http://localhost:5004/pay",
+      "https://dc-u3lh.vercel.app/pay",
       {
         user_id: user.user_id,
         order_id: order.data.order_id,
