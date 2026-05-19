@@ -1,0 +1,91 @@
+
+### =========================
+### REGISTER ADMIN
+### =========================
+POST http://localhost:5001/register
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin123",
+  "role": "admin"
+}
+
+### =========================
+### REGISTER USER
+### =========================
+POST http://localhost:5001/register
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "user123",
+  "role": "user"
+}
+
+### =========================
+### LOGIN ADMIN
+### =========================
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin123"
+}
+
+### =========================
+### LOGIN USER
+### =========================
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "user123"
+}
+
+### =========================
+### GET ALL USERS (ADMIN)
+### =========================
+GET http://localhost:5001/users
+
+
+### =========================
+### ADD PRODUCT (ADMIN ONLY)
+### =========================
+POST http://localhost:5002/add-product
+Content-Type: application/json
+
+{
+  "name": "Laptop",
+  "price": 1200
+}
+
+### =========================
+### GET PRODUCTS (USER + ADMIN)
+### =========================
+GET http://localhost:5002/products
+
+
+### =========================
+### CREATE ORDER
+### =========================
+POST http://localhost:5003/create-order
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "product_id": 1,
+  "amount": 1200
+}
+
+### =========================
+### PAYMENT TEST (DIRECT SERVICE)
+### =========================
+POST http://localhost:5004/pay
+Content-Type: application/json
+
+{
+  "amount": 1200
+}
