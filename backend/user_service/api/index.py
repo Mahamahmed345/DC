@@ -10,6 +10,9 @@ from supabase_client import supabase
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Flask API is running on Vercel"})
 
 @app.route("/signup", methods=["POST"])
 def signup():
